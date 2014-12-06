@@ -112,6 +112,7 @@ end
 group :production do
   gem 'dotenv-deployment'
   gem 'rack'
+  gem 'unicorn', '~> 4.6.3'
 end
 
 # Platform requirements.
@@ -129,6 +130,5 @@ if ENV['ON_HEROKU'] || ENV['HEROKU_POSTGRESQL_ROSE_URL'] || File.read(File.join(
   gem 'rails_12factor'
 else
   gem 'pg', platform: :ruby_18
-  gem 'unicorn', platform: :ruby_18
   gem 'rails_12factor', platform: :ruby_18
 end
